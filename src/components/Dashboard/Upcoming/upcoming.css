@@ -1,0 +1,18 @@
+.marquee {
+    display: inline-block;
+    padding-left: 20%;
+    font-size: 45px;
+    font-style: bold;
+    background: black;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: marquee 7s linear infinite;
+    margin: 10px 10px;
+}
+@keyframes marquee {
+    0%   { transform: translate(55%, 0); }
+    100% { transform: translate(-25%, 0); }
+}
+
+
+
