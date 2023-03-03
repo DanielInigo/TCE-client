@@ -32,47 +32,42 @@ const Enroll = () => {
   };
 
   return (
-    <div className="bg-[#f0f2f5] relative ">
-      <div className="mx-auto container py-20 px-6">
-        <div className="grid grid-cols-3 gap-10 ">
-          
-          {event.map((eve,idx) => {
-            
-            return(
-              <div key={idx} className="rounded ">
-              <div className="w-full h-[20rem] justify-between bg-gray-700 border border-gray-700 rounded-lg  mb-6 py-5 px-4 ">
+<div className="bg-[#f0f2f5] relative">
+  <div className="mx-auto container py-20 px-20">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      {event.map((eve, idx) => {
+        return (
+          <div key={idx} className="rounded">
+            <div className="w-full h-[20rem] justify-between bg-gray-700 border border-gray-700 rounded-lg mb-6 py-5 px-4">
               <button
-                    onClick={() => {
-                      Notify(eve.name,registeredPhonenumber);
-                    }}
-                    className="p-2 sticky border-2 ml-[20rem] bg-white border-black rounded-md font-bold hover:bg-black hover:text-white"
-                  >
-                    Notify All
-                  </button>
-                <div>
-                  <h4 className=" text-white font-bold text-2xl text-center m-3">
-                    {eve.name}
-                  </h4>
-                  {
-                  eve.res1.map((res,idx) => {
-                    registeredPhonenumber.push(res.userphonenumber)
-                    return (
-                      <li key={idx} className=" text-white text-xl mt-1">
-                        Reg No: {res.user}  Phone: {res.userphonenumber}
-                      </li>
-                    );
-                  })}
-                  
-                </div>
+                onClick={() => {
+                  Notify(eve.name, registeredPhonenumber);
+                }}
+                className="p-2 sticky border-2 md:m-auto bg-white border-black rounded-md font-bold hover:bg-black hover:text-white"
+              >
+                Notify All
+              </button>
+              <div>
+                <h4 className="text-white font-bold text-2xl text-center m-3">
+                  {eve.name}
+                </h4>
+                {eve.res1.map((res, idx) => {
+                  registeredPhonenumber.push(res.userphonenumber);
+                  return (
+                    <li key={idx} className="text-white text-xl mt-1">
+                      Reg No: {res.user} Phone: {res.userphonenumber}
+                    </li>
+                  );
+                })}
               </div>
             </div>
-            )
-
-})}
-        </div>
-      </div>
-      <ToastContainer />
+          </div>
+        );
+      })}
     </div>
+  </div>
+  <ToastContainer />
+</div>
   );
 };
 
